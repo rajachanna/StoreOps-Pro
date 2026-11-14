@@ -1,0 +1,13 @@
+services:
+  storeops:
+    build: .
+    env_file: .env
+    environment:
+      STOREOPS_DB: /data/storeops.sqlite
+    volumes:
+      - storeops-data:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+volumes:
+  storeops-data:

@@ -1,0 +1,1 @@
+"""StoreOps Pro test suite."""

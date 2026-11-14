@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="referrer" content="no-referrer"/>
+<title>StoreOps Pro · Commerce Operations Intelligence</title>
+<style>
+:root{color-scheme:dark;--bg:#090e19;--surface:#121b2b;--panel:#131f30;--line:#29394e;--muted:#95a7bc;--text:#f0f5ff;--accent:#55f0ae;--blue:#69a7ff;--yellow:#ffcc79;--red:#fc8992;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif}*{box-sizing:border-box}body{margin:0;color:var(--text);background:radial-gradient(circle at 92% 2%,#203a52 0%,transparent 25%),radial-gradient(circle at 4% 5%,#153d34 0%,transparent 24%),var(--bg)}
+.shell{max-width:1310px;margin:auto;padding:0 30px 64px}header{display:flex;justify-content:space-between;align-items:center;padding:27px 0 22px;gap:15px;border-bottom:1px solid #24354a}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.brand{display:flex;align-items:center;gap:13px;font-size:23px;font-weight:850;letter-spacing:-.8px}.logo{display:grid;place-items:center;border-radius:13px;height:44px;width:44px;color:#052015;background:linear-gradient(145deg,#5efabb,#46a7e3);box-shadow:0 0 25px #36d99a30}.label{font-size:11px;letter-spacing:.13em;color:var(--accent);font-weight:800;border:1px solid #275b4b;background:#143b33;border-radius:40px;padding:8px 13px;white-space:nowrap}
+h1{font-size:clamp(28px,3.6vw,46px);line-height:1.13;letter-spacing:-1.4px;margin:34px 0 10px;max-width:900px}h2{font-size:17px;letter-spacing:-.3px;margin:0 0 12px}h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9fb0c5;margin:0 0 14px}p{color:var(--muted);line-height:1.6;margin:5px 0 18px;font-size:14px}.highlight{color:var(--accent)}
+.ribbon{padding:13px 16px;background:#1c2739;border:1px solid #44556a;border-left:3px solid #f6c775;border-radius:10px;font-size:12px;color:#cdd9e6;line-height:1.6;margin:22px 0 18px}.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+input,textarea,select{background:#111d2e;border:1px solid #3a4960;border-radius:10px;color:var(--text);font:inherit;font-size:13px;padding:12px 13px;min-width:0}input:focus,textarea:focus,select:focus{outline:1px solid var(--accent)}input::placeholder,textarea::placeholder{color:#788ca4}.toolbar input{width:320px;max-width:100%}
+button{border:0;border-radius:10px;padding:12px 17px;font:inherit;font-weight:780;font-size:12px;cursor:pointer;color:#04291e;background:var(--accent)}button:hover{filter:brightness(1.09)}button.soft{color:#d3e4f8;background:#23354b;border:1px solid #33506c}button.danger{background:#5a2a37;color:#ffdbe0}.message{min-height:25px;color:#fed7ad;font-size:13px;margin-bottom:6px}
+.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;margin:15px 0 18px}.stat,.panel{border:1px solid var(--line);background:linear-gradient(145deg,#152337,#111b2b);border-radius:15px}.stat{padding:20px;min-height:117px}.stat span{font-size:12px;color:var(--muted)}.stat strong{font-size:32px;line-height:1.25;letter-spacing:-.9px;display:block;margin-top:15px}.stat strong.warning{color:var(--yellow)}
+.layout{display:grid;grid-template-columns:1.3fr .87fr;gap:15px}.panel{padding:21px;min-width:0}.panel + .panel{margin:0}.stack{display:grid;gap:15px}.section{margin-top:16px}.small{font-size:12px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;border-bottom:1px solid #2a3b4e;padding:12px 9px}th{color:#92a8c0;white-space:nowrap;font-size:11px;text-transform:uppercase;letter-spacing:.05em}td{color:#cfdeed}tbody tr:last-child td{border-bottom:0}.scroll{overflow-x:auto}.nowrap{white-space:nowrap}.pill{padding:6px 9px;border-radius:40px;display:inline-block;background:#1a3d35;color:#81f2c0;font-size:11px;font-weight:700}.pill.warn{background:#3b3028;color:#f6c27d}.pill.critical{background:#4c2838;color:#ffa2b0}.item-list{display:grid;gap:10px}.alert{padding:13px 14px;background:#17273a;border:1px solid #304058;border-radius:11px;display:flex;justify-content:space-between;gap:10px;align-items:center}.alert strong{font-size:12px}.alert p{margin:3px 0 0;font-size:12px}.formline{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.formline input,.formline select{flex:1;min-width:130px}.formline input.short{max-width:150px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.subnote{font-size:12px;margin-top:12px;color:#8fa3ba;line-height:1.5}.empty{color:#889bb0;font-size:12px;padding:10px 0}.top-right{display:flex;gap:10px;align-items:center}footer{margin-top:25px;font-size:12px;color:var(--muted);line-height:1.6}footer a{margin-right:15px}
+@media(max-width:980px){.metrics{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}}@media(max-width:620px){.shell{padding:0 14px 45px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:14px}.stat strong{font-size:26px}header{padding:20px 0}.brand{font-size:20px}.label{font-size:9px}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="shell">
+<header><div class="brand"><span class="logo" aria-hidden="true">◈</span><span>StoreOps <span class="highlight">Pro</span></span></div><div class="top-right"><span class="label">● COMMERCE OPS · v0.1</span></div></header>
+<main>
+<h1>Clarity for every order.<br/><span class="highlight">Control for every exception.</span></h1>
+<p>Order visibility, low-stock signals, signed Shopify-style webhooks and human-reviewed return cases—in a single workspace.</p>
+<div class="ribbon">PORTFOLIO DEMO · Data here is synthetic until you intentionally configure your own Shopify test store. Approving a return never issues a Shopify refund. Inventory adjustments affect this local database only, not actual store stock.</div>
+<div class="toolbar"><input type="password" autocomplete="off" id="key" aria-label="Operator API key" placeholder="Enter STOREOPS_OPERATOR_KEY"/><button id="connect">Connect workspace</button><button class="soft" id="refresh">Refresh</button><span class="small" id="storeName">Local demo mode</span></div>
+<div class="message" id="message" role="status"></div>
+<div class="metrics">
+<div class="stat"><span>Orders synced</span><strong id="totalOrders">—</strong></div>
+<div class="stat"><span>Needs review</span><strong id="exceptions" class="warning">—</strong></div>
+<div class="stat"><span>Low stock SKUs</span><strong id="lowStock" class="warning">—</strong></div>
+<div class="stat"><span>Return requests</span><strong id="pendingReturns">—</strong></div>
+<div class="stat"><span>Webhook deliveries</span><strong id="deliveries">—</strong></div>
+</div>
+<div class="layout">
+<div class="stack">
+<section class="panel"><h2>Order monitoring</h2><p>Normalized order states; exception detection does not fulfill or modify an order.</p><div class="scroll"><table><thead><tr><th>Order</th><th>Financial</th><th>Fulfillment</th><th>Value</th><th>Alert</th></tr></thead><tbody id="orders"><tr><td colspan="5" class="empty">Connect to load orders</td></tr></tbody></table></div></section>
+<section class="panel"><h2>Inventory snapshot</h2><p>Local stock snapshots and manually entered quantities; never subtracts stock again after order webhooks.</p><div class="scroll"><table><thead><tr><th>SKU</th><th>Qty</th><th>Source</th><th>Updated</th></tr></thead><tbody id="inventory"><tr><td colspan="4" class="empty">Connect to load stock</td></tr></tbody></table></div>
+<h3 style="margin-top:23px">Local stock override</h3><div class="formline"><input id="sku" placeholder="SKU (e.g. TSHIRT-BLK)" maxlength="80"/><input id="qty" class="short" type="number" min="0" max="100000000" placeholder="Quantity"/><button id="saveStock">Save stock</button></div><div class="subnote">Updates local records only. Does not write to Shopify.</div></section>
+<section class="panel"><h2>Return-review queue</h2><p>Review a request before any manual external refund or replacement. No Shopify refund execution.</p><div class="scroll"><table><thead><tr><th>Order</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead><tbody id="returns"><tr><td colspan="4" class="empty">No return cases loaded</td></tr></tbody></table></div><h3 style="margin-top:22px">Create a review case</h3><div class="formline"><input id="orderId" placeholder="Order ID e.g. 101"/><input id="reason" placeholder="Reason (8+ chars)" maxlength="160"/><button id="createReturn">Create case</button></div></section>
+</div>
+<div class="stack">
+<section class="panel"><h2>Operational alerts</h2><p>Review exceptions before making changes to payments or fulfillment.</p><div id="alerts" class="item-list"><span class="empty">Connect to inspect alerts</span></div></section>
+<section class="panel"><h2>Exception rules</h2><div class="item-list">
+<div class="alert"><div><strong>Payment review</strong><p>Orders with unconfirmed payment states</p></div><span class="pill warn">Review</span></div>
+<div class="alert"><div><strong>High-value order</strong><p>Large paid, unfulfilled orders</p></div><span class="pill warn">Review</span></div>
+<div class="alert"><div><strong>Low inventory</strong><p>SKU count at or under configured threshold</p></div><span class="pill warn">Restock</span></div>
+<div class="alert"><div><strong>Duplicate webhook</strong><p>Delivery IDs stored atomically per shop</p></div><span class="pill">Deduplicated</span></div>
+</div></section>
+<section class="panel"><h2>Integration status</h2><div class="item-list"><div class="alert"><div><strong>Shopify webhooks</strong><p>Signed receiver; requires developer-owned app secret and test store</p></div><span class="pill warn">Setup required</span></div><div class="alert"><div><strong>Shopify Admin API</strong><p>No live reconciliation or external writes implemented</p></div><span class="pill critical">Not connected</span></div><div class="alert"><div><strong>Refunds / fulfillment</strong><p>Manual review only, zero automatic payouts</p></div><span class="pill">Manual</span></div></div></section>
+<section class="panel"><h2>Latest audit events</h2><div id="audit" class="item-list"><span class="empty">Connect to view review history</span></div></section>
+</div></div>
+<footer><a href="/docs">API documentation</a><a href="https://github.com/rajachanna/StoreOps-Pro">GitHub project</a><a href="https://nextgentechdev.com">NextGen Tech Solutions</a><br/>Proof-first ecommerce automation prototype by Raja Channa. No Shopify store connection, sales uplift or deployment availability implied by this demo.</footer>
+</main></div>
+<script>
+(()=>{
+const el=id=>document.getElementById(id);let key='';
+async function api(path,method='GET',payload){const opts={method,cache:'no-store',headers:{'X-Operator-Key':key}};if(payload!==undefined){opts.headers['Content-Type']='application/json';opts.body=JSON.stringify(payload)}const r=await fetch(path,opts);if(!r.ok){let msg='Request failed: '+r.status;try{const data=await r.json();msg=String(data.detail||msg)}catch{}throw Error(msg)}return r.json()}
+function status(text){el('message').textContent=text}
+function setText(id,t){el(id).textContent=String(t)}
+function rows(id,records,render){const container=el(id);container.replaceChildren();if(!records.length){const tr=document.createElement('tr'),td=document.createElement('td');td.className='empty';td.colSpan=container.closest('table').querySelectorAll('th').length;td.textContent='No records yet';tr.append(td);container.append(tr);return}records.forEach(record=>container.append(render(record)))}
+function cell(t){const td=document.createElement('td');td.textContent=String(t??'—');return td}
+function flag(v){const span=document.createElement('span');span.className='pill '+(v==='none'?'':v==='low_stock'||v==='payment_review'?'warn':'critical');span.textContent=String(v||'—').replaceAll('_',' ');return span}
+async function refresh(){if(!key){status('Enter your operator key first.');return}try{status('');const [overview,orders,stocks,alerts,returns,audit]=await Promise.all(['/api/overview','/api/orders','/api/stock','/api/alerts','/api/returns','/api/audit'].map(p=>api(p)));setText('storeName',overview.shop);const m=overview.metrics;setText('totalOrders',m.orders);setText('exceptions',m.exceptions);setText('lowStock',m.low_stock);setText('pendingReturns',m.returns_pending);setText('deliveries',m.webhook_deliveries);
+rows('orders',orders.orders,o=>{const tr=document.createElement('tr');tr.append(cell(o.order_number),cell(o.financial_status),cell(o.fulfillment_status),cell((o.total_cents/100).toFixed(2)+' '+o.currency));const td=document.createElement('td');td.append(flag(o.exception));tr.append(td);return tr});
+rows('inventory',stocks.inventory,s=>{const tr=document.createElement('tr');tr.append(cell(s.sku),cell(s.quantity),cell(s.source),cell(s.updated_at.slice(0,10)));return tr});
+rows('returns',returns.returns,t=>{const tr=document.createElement('tr');tr.append(cell(t.order_id),cell(t.reason));const td=document.createElement('td');td.append(flag(t.status));tr.append(td);const action=document.createElement('td');if(t.status==='pending'){const b=document.createElement('button');b.className='soft';b.textContent='Review';b.onclick=async()=>{const decision=window.prompt('Type approved or rejected');if(!['approved','rejected'].includes(decision))return;const note=window.prompt('Enter review reason (4+ chars)');if(!note||note.length<4)return;try{await api('/api/returns/'+t.id+'/review','POST',{decision,note});await refresh()}catch(e){status(e.message)}};action.append(b)}else{action.textContent=t.reviewer_note||'Reviewed'}tr.append(action);return tr});
+const alertsBox=el('alerts');alertsBox.replaceChildren();if(!alerts.alerts.length){const p=document.createElement('div');p.className='empty';p.textContent='No current operational exceptions';alertsBox.append(p)}alerts.alerts.slice(0,20).forEach(a=>{const box=document.createElement('div');box.className='alert';const left=document.createElement('div');const title=document.createElement('strong');title.textContent=a.object;const detail=document.createElement('p');detail.textContent=a.detail;left.append(title,detail);box.append(left,flag(a.category));alertsBox.append(box)});
+const auditBox=el('audit');auditBox.replaceChildren();if(!audit.events.length){const p=document.createElement('span');p.className='empty';p.textContent='No operator audit events yet';auditBox.append(p)}audit.events.slice(0,7).forEach(a=>{const box=document.createElement('div');box.className='alert';const left=document.createElement('div');const title=document.createElement('strong');title.textContent=a.event.replaceAll('_',' ');const detail=document.createElement('p');detail.textContent=a.object_id.slice(0,22)+' · '+a.created_at.slice(0,16);left.append(title,detail);box.append(left);auditBox.append(box)})
+}catch(e){status(e.message)}}
+el('connect').onclick=()=>{key=el('key').value;el('key').value='';refresh()};el('refresh').onclick=refresh;
+el('saveStock').onclick=async()=>{try{const quantity=Number(el('qty').value);if(!el('qty').value||!Number.isInteger(quantity))throw Error('Enter an integer quantity');await api('/api/stock','POST',{sku:el('sku').value,quantity});status('Local stock updated (not Shopify).');await refresh()}catch(e){status(e.message)}};
+el('createReturn').onclick=async()=>{try{await api('/api/returns','POST',{order_id:el('orderId').value,reason:el('reason').value});status('Review case created; no refund issued.');await refresh()}catch(e){status(e.message)}};
+})();
+</script>
+</body></html>
